@@ -55,8 +55,6 @@ public class Security extends WebSecurityConfigurerAdapter {
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
-//        configuration.setAllowedMethods(Arrays.asList("GET", "POST"));
-//        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "OPTIONS"));
         configuration.addAllowedHeader("*");
         configuration.setAllowedMethods(Arrays.asList(
                 HttpMethod.GET.name(),
@@ -67,18 +65,13 @@ public class Security extends WebSecurityConfigurerAdapter {
         configuration.addExposedHeader("Authorization");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
+//        source.registerCorsConfiguration("/", configuration);
 //        source.registerCorsConfiguration("/login", configuration);
 //        source.registerCorsConfiguration("/saveEvent", configuration);
         return source;
     }
 
 
-    //            /* To allow Pre-flight [OPTIONS] request from browser */
-//    @Override
-//    public void configure(WebSecurity web) throws Exception {
-//        web.ignoring().antMatchers(HttpMethod.OPTIONS, "/saveEvent");
-//
-//    }
 }
 
 
