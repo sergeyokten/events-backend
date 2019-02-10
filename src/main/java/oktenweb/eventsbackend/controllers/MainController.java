@@ -13,11 +13,6 @@ public class MainController {
     @Autowired
     private EventRepo eventRepo;
 
-    @GetMapping("/")
-    public void home() {
-    }
-
-
 
     @PostMapping("/saveEvent")
     public String asd(@RequestBody Event event) {
